@@ -5,22 +5,19 @@ import { Controller } from "react-hook-form";
 const Input = ({ control, name, errorMessage, ...rest }: IInputProps) => {
   return (
     <>
+      {errorMessage ? <ErrorMessage>{errorMessage}</ErrorMessage> : null}
       <InputContainer>
         <Controller
           control={control}
           name={name}
-          render={({ field: { onChange, onBlur, value, ref } }) => (
+          render={({ field }) => (
             <input
               {...rest}
-              onChange={onChange}
-              onBlur={onBlur}
-              value={value}
-              ref={ref}
+              {...field}
             />
           )}
         />
       </InputContainer>
-      {errorMessage ? <ErrorMessage>{errorMessage}</ErrorMessage> : null}
     </>
   );
 };

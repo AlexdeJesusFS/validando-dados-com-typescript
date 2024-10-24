@@ -1,4 +1,11 @@
 export interface IButtonProps {
-    title: string;
+    children: React.ReactNode;
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
+    disabled?: boolean;
+}
+
+export interface IButtonContainerProps {
+    children: React.ReactNode;
+    onClick?: React.MouseEventHandler<HTMLButtonElement>;
+    disabled?: boolean;
 }
